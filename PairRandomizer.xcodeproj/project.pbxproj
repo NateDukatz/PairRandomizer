@@ -15,6 +15,7 @@
 		436E2F0E1F563E0C00D16B60 /* PairRandomizerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436E2F0D1F563E0C00D16B60 /* PairRandomizerTableViewController.swift */; };
 		436E2F131F563ECE00D16B60 /* PairListItem+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436E2F121F563ECE00D16B60 /* PairListItem+Convenience.swift */; };
 		436E2F161F563F5C00D16B60 /* CoreDatastack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436E2F151F563F5C00D16B60 /* CoreDatastack.swift */; };
+		436E2F181F5640A300D16B60 /* PairListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436E2F171F5640A300D16B60 /* PairListController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		436E2F0D1F563E0C00D16B60 /* PairRandomizerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PairRandomizerTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		436E2F121F563ECE00D16B60 /* PairListItem+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PairListItem+Convenience.swift"; sourceTree = "<group>"; };
 		436E2F151F563F5C00D16B60 /* CoreDatastack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDatastack.swift; sourceTree = "<group>"; };
+		436E2F171F5640A300D16B60 /* PairListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PairListController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				436E2F141F563ED400D16B60 /* Model */,
+				436E2F191F5640AC00D16B60 /* Model Controller */,
 				436E2F111F563E5000D16B60 /* View */,
 				436E2F101F563E4500D16B60 /* ViewController */,
 				436E2F0F1F563E3200D16B60 /* Resources */,
@@ -103,6 +106,14 @@
 				436E2F121F563ECE00D16B60 /* PairListItem+Convenience.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		436E2F191F5640AC00D16B60 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				436E2F171F5640A300D16B60 /* PairListController.swift */,
+			);
+			name = "Model Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +192,7 @@
 				436E2F131F563ECE00D16B60 /* PairListItem+Convenience.swift in Sources */,
 				436E2F0C1F563DEB00D16B60 /* PairRandomizer.xcdatamodeld in Sources */,
 				436E2EF91F563C0000D16B60 /* AppDelegate.swift in Sources */,
+				436E2F181F5640A300D16B60 /* PairListController.swift in Sources */,
 				436E2F161F563F5C00D16B60 /* CoreDatastack.swift in Sources */,
 				436E2F0E1F563E0C00D16B60 /* PairRandomizerTableViewController.swift in Sources */,
 			);

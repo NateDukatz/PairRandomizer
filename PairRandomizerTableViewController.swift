@@ -9,16 +9,42 @@
 import UIKit
 
 class PairRandomizerTableViewController: UITableViewController {
-
+    
+    let pairListController = PairListController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
     }
+    
+    @IBAction func addItemButtonTapped(_ sender: Any) {
+        let alertController = UIAlertController(title: "Add New Item", message: "Type your item here", preferredStyle: .alert)
+        
+        alertController.addTextField { (newTextField: UITextField) in
+            newTextField.placeholder = "Item Name"
+        }
+        
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        alertController.addAction(UIAlertAction(title: "Save", style: .default, handler: { (_ : UIAlertAction) in
+            
+            if let nameTextField = alertController.textFields?.first {
+                let name = nameTextField.text ?? ""
+
+                let _ = self.pairListController.create(PairListItemWithName: name)
+                
+                DispatchQueue.main.async(execute: {
+                    self.tableView.reloadData()
+                })
+            }
+        }))
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -28,13 +54,19 @@ class PairRandomizerTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        
+        guard let numberOfObjects = pairListController.fetchedResultsController.fetchedObjects?.count else { return 0 }
+        
+        if numberOfObjects % 2 == 0 {
+            return numberOfObjects/2
+        } else {
+            return numberOfObjects/2 + 1
+        }
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        
+        return 2
     }
 
     /*

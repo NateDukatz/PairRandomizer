@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Pair Randomizer Table View Controller-->
         <scene sceneID="fSf-cc-XeH">
             <objects>
-                <tableViewController id="hJN-O2-W5E" sceneMemberID="viewController">
+                <tableViewController id="hJN-O2-W5E" customClass="PairRandomizerTableViewController" customModule="PairRandomizer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="PsH-QJ-PHQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -34,7 +34,11 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="6R9-h3-iPh">
                         <barButtonItem key="leftBarButtonItem" title="Randomize" id="tMe-as-IDf"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="jbt-7M-Lsx"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="jbt-7M-Lsx">
+                            <connections>
+                                <action selector="addItemButtonTapped:" destination="hJN-O2-W5E" id="Fj5-1d-3jr"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wLB-TG-neW" userLabel="First Responder" sceneMemberID="firstResponder"/>
