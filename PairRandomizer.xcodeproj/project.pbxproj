@@ -11,6 +11,10 @@
 		436E2EFE1F563C0000D16B60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 436E2EFC1F563C0000D16B60 /* Main.storyboard */; };
 		436E2F001F563C0000D16B60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 436E2EFF1F563C0000D16B60 /* Assets.xcassets */; };
 		436E2F031F563C0000D16B60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 436E2F011F563C0000D16B60 /* LaunchScreen.storyboard */; };
+		436E2F0C1F563DEB00D16B60 /* PairRandomizer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 436E2F0A1F563DEB00D16B60 /* PairRandomizer.xcdatamodeld */; };
+		436E2F0E1F563E0C00D16B60 /* PairRandomizerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436E2F0D1F563E0C00D16B60 /* PairRandomizerTableViewController.swift */; };
+		436E2F131F563ECE00D16B60 /* PairListItem+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436E2F121F563ECE00D16B60 /* PairListItem+Convenience.swift */; };
+		436E2F161F563F5C00D16B60 /* CoreDatastack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436E2F151F563F5C00D16B60 /* CoreDatastack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +24,10 @@
 		436E2EFF1F563C0000D16B60 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		436E2F021F563C0000D16B60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		436E2F041F563C0000D16B60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		436E2F0B1F563DEB00D16B60 /* PairRandomizer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PairRandomizer.xcdatamodel; sourceTree = "<group>"; };
+		436E2F0D1F563E0C00D16B60 /* PairRandomizerTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PairRandomizerTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		436E2F121F563ECE00D16B60 /* PairListItem+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PairListItem+Convenience.swift"; sourceTree = "<group>"; };
+		436E2F151F563F5C00D16B60 /* CoreDatastack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDatastack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,13 +60,49 @@
 		436E2EF71F563C0000D16B60 /* PairRandomizer */ = {
 			isa = PBXGroup;
 			children = (
+				436E2F141F563ED400D16B60 /* Model */,
+				436E2F111F563E5000D16B60 /* View */,
+				436E2F101F563E4500D16B60 /* ViewController */,
+				436E2F0F1F563E3200D16B60 /* Resources */,
+			);
+			path = PairRandomizer;
+			sourceTree = "<group>";
+		};
+		436E2F0F1F563E3200D16B60 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				436E2EF81F563C0000D16B60 /* AppDelegate.swift */,
-				436E2EFC1F563C0000D16B60 /* Main.storyboard */,
 				436E2EFF1F563C0000D16B60 /* Assets.xcassets */,
 				436E2F011F563C0000D16B60 /* LaunchScreen.storyboard */,
 				436E2F041F563C0000D16B60 /* Info.plist */,
+				436E2F0A1F563DEB00D16B60 /* PairRandomizer.xcdatamodeld */,
+				436E2F151F563F5C00D16B60 /* CoreDatastack.swift */,
 			);
-			path = PairRandomizer;
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		436E2F101F563E4500D16B60 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				436E2F0D1F563E0C00D16B60 /* PairRandomizerTableViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		436E2F111F563E5000D16B60 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				436E2EFC1F563C0000D16B60 /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		436E2F141F563ED400D16B60 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				436E2F121F563ECE00D16B60 /* PairListItem+Convenience.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,7 +178,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				436E2F131F563ECE00D16B60 /* PairListItem+Convenience.swift in Sources */,
+				436E2F0C1F563DEB00D16B60 /* PairRandomizer.xcdatamodeld in Sources */,
 				436E2EF91F563C0000D16B60 /* AppDelegate.swift in Sources */,
+				436E2F161F563F5C00D16B60 /* CoreDatastack.swift in Sources */,
+				436E2F0E1F563E0C00D16B60 /* PairRandomizerTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +350,19 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		436E2F0A1F563DEB00D16B60 /* PairRandomizer.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				436E2F0B1F563DEB00D16B60 /* PairRandomizer.xcdatamodel */,
+			);
+			currentVersion = 436E2F0B1F563DEB00D16B60 /* PairRandomizer.xcdatamodel */;
+			path = PairRandomizer.xcdatamodeld;
+			sourceTree = SOURCE_ROOT;
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 436E2EED1F563C0000D16B60 /* Project object */;
 }
