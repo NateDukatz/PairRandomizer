@@ -11,24 +11,28 @@ import CoreData
 
 struct PairListController {
     
+    static let shared = PairListController()
+    
     let fetchedResultsController: NSFetchedResultsController<PairListItem>
+    
+    
     
     init() {
         
         let fetchRequest: NSFetchRequest<PairListItem> = PairListItem.fetchRequest()
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: nil, ascending: true)]
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "group", ascending: true)]
         
-        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStack.context, sectionNameKeyPath: nil, cacheName: nil)
+        fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStack.context, sectionNameKeyPath: "group", cacheName: nil)
         
         do {
             try fetchedResultsController.performFetch()
         } catch {
-            NSLog("Error fetching PCItems")
+            NSLog("Error fetching Pair list items")
         }
     }
     
-    func create(PairListItemWithName name: String) {
-        let _ = PairListItem(name: name)
+    func create(PairListItemWithName name: String, group: Int16) {
+        let _ = PairListItem(name: name, group: group)
         
         saveToPersistentStorage()
     }

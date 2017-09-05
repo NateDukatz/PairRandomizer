@@ -11,10 +11,11 @@ import CoreData
 
 extension PairListItem {
     
-    convenience init(name: String, context: NSManagedObjectContext = CoreDataStack.context) {
+    convenience init(name: String, group: Int16, context: NSManagedObjectContext = CoreDataStack.context) {
         
         self.init(context: context)
         
         self.name = name
+        self.group = group
     }
 }

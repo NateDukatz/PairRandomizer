@@ -16,6 +16,7 @@
 		436E2F131F563ECE00D16B60 /* PairListItem+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436E2F121F563ECE00D16B60 /* PairListItem+Convenience.swift */; };
 		436E2F161F563F5C00D16B60 /* CoreDatastack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436E2F151F563F5C00D16B60 /* CoreDatastack.swift */; };
 		436E2F181F5640A300D16B60 /* PairListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436E2F171F5640A300D16B60 /* PairListController.swift */; };
+		438B7B2F1F56828C0048279E /* PairListItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 438B7B2E1F56828C0048279E /* PairListItemTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		436E2F121F563ECE00D16B60 /* PairListItem+Convenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PairListItem+Convenience.swift"; sourceTree = "<group>"; };
 		436E2F151F563F5C00D16B60 /* CoreDatastack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDatastack.swift; sourceTree = "<group>"; };
 		436E2F171F5640A300D16B60 /* PairListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PairListController.swift; sourceTree = "<group>"; };
+		438B7B2E1F56828C0048279E /* PairListItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PairListItemTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				436E2F0D1F563E0C00D16B60 /* PairRandomizerTableViewController.swift */,
+				438B7B2E1F56828C0048279E /* PairListItemTableViewCell.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				438B7B2F1F56828C0048279E /* PairListItemTableViewCell.swift in Sources */,
 				436E2F131F563ECE00D16B60 /* PairListItem+Convenience.swift in Sources */,
 				436E2F0C1F563DEB00D16B60 /* PairRandomizer.xcdatamodeld in Sources */,
 				436E2EF91F563C0000D16B60 /* AppDelegate.swift in Sources */,
@@ -360,6 +364,7 @@
 				436E2F091F563C0000D16B60 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
