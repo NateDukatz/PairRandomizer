@@ -18,6 +18,10 @@ class PairRandomizerTableViewController: UITableViewController, NSFetchedResults
         PairListController.shared.fetchedResultsController.delegate = self
     }
     
+    @IBAction func randomizeButtonTapped(_ sender: Any) {
+        randomizer()
+    }
+    
     @IBAction func addItemButtonTapped(_ sender: Any) {
         let alertController = UIAlertController(title: "Add New Item", message: "Type your item here", preferredStyle: .alert)
         
@@ -107,7 +111,7 @@ class PairRandomizerTableViewController: UITableViewController, NSFetchedResults
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PairListItemCell", for: indexPath) //as? PairListItemTableViewCell else { return PairListItemTableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "PairListItemCell", for: indexPath) as? PairListItemTableViewCell else { return PairListItemTableViewCell() }
         
 //        let index = indexPath.section * 2 + indexPath.row
 //        
@@ -121,7 +125,7 @@ class PairRandomizerTableViewController: UITableViewController, NSFetchedResults
         
         //pairListItem.group = Int64(indexPath.section * 2 + indexPath.row)
         
-        cell.textLabel?.text = pairListItem.name
+        cell.update(pairListItem: pairListItem)
 
         return cell
     }
@@ -130,7 +134,39 @@ class PairRandomizerTableViewController: UITableViewController, NSFetchedResults
         return "Group \(section + 1)"
     }
     
-  
+    func randomizer() {
+        
+        guard let currentArray = PairListController.shared.fetchedResultsController.fetchedObjects else { return }
+        var currentOrder = currentArray
+
+        var newOrder = [Int16]()
+        
+        for _ in currentOrder {
+            
+            let randomIndex = Int16(arc4random_uniform(UInt32(currentOrder.count)))
+            
+            let randomObject = currentOrder[Int(randomIndex)]
+                
+            currentOrder.remove(at: Int(randomIndex))
+            
+            newOrder.append(randomObject.group)
+            
+        }
+        
+        for (index, item) in newOrder.enumerated() {
+          
+            print(item)
+            
+            guard let pairListItem = PairListController.shared.fetchedResultsController.fetchedObjects?[index] else { return }
+            //print(pairListItem.group)
+            pairListItem.group = item
+            
+            
+        }
+        
+        PairListController.shared.saveToPersistentStorage()
+        tableView.reloadData()
+    }
     
     
     /*
@@ -193,7 +229,8 @@ class PairRandomizerTableViewController: UITableViewController, NSFetchedResults
                 tableView.insertRows(at: [newIndexPath], with: .automatic)
             case .move:
                 guard let indexPath = indexPath, let newIndexPath = newIndexPath else { return }
-                tableView.moveRow(at: indexPath, to: newIndexPath)
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                tableView.insertRows(at: [newIndexPath], with: .automatic)
             case .update:
                 guard let indexPath = indexPath else { return }
                 tableView.reloadRows(at: [indexPath], with: .automatic)

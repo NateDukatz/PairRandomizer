@@ -33,7 +33,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="6R9-h3-iPh">
-                        <barButtonItem key="leftBarButtonItem" title="Randomize" id="tMe-as-IDf"/>
+                        <barButtonItem key="leftBarButtonItem" title="Randomize" id="tMe-as-IDf">
+                            <connections>
+                                <action selector="randomizeButtonTapped:" destination="hJN-O2-W5E" id="ecy-A2-4xN"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="jbt-7M-Lsx">
                             <connections>
                                 <action selector="addItemButtonTapped:" destination="hJN-O2-W5E" id="Fj5-1d-3jr"/>
